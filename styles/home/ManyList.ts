@@ -1,0 +1,14 @@
+import styled from 'styled-components';
+import { OnlyMessageInHome } from 'styles/layout';
+
+export const NotSigned = styled(OnlyMessageInHome)``;
+
+export const Loading = styled(OnlyMessageInHome)``;
+
+export const Error = styled(OnlyMessageInHome)``;
+
+export const Container = styled.section`
+  flex-grow: 1;
+  padding: 1rem;
+  overflow-y: auto;
+`;
