@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 import * as color from 'styles/color';
-import { screen_tiny, height_header } from 'styles/layout';
+import { screen_tiny } from 'styles/layout';
 
 const skeleton = keyframes`
   0% {
