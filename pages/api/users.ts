@@ -36,8 +36,8 @@ async function handleGet(req: Req, res: Res) {
   const queryMade = query(collection(db, 'one'), where('people', 'array-contains', user));
   const snapRooms = await getDocs(queryMade);
   const others = [];
-  for (let i = 0; i < snapRooms.docs.length; i++) {
-    const roomid = snapRooms.docs[i].id;
+  for (const room of snapRooms.docs) {
+    const roomid = room.id;
     const another = roomid.split('-').find((person: string) => person !== user);
     if (!another) {
       return res.status(404).end();

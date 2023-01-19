@@ -18,8 +18,6 @@
 
 ## 시연 영상
 
-아래의 링크를 참고해 주시기 바랍니다.
-
 [링크](https://www.youtube.com/playlist?list=PLvBzZzUGEXRUp-0xlTstaRJt76p8mLz7T)
 
 ## 주요 사용 기술
