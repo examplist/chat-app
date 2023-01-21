@@ -5,7 +5,9 @@ import { useOneStore } from 'store/one';
 import { useEffect, useState } from 'react';
 import Title from 'components/one/Title';
 import Messages from 'components/one/Messages';
+// import Messages from 'components/one/MessagesDeleteRQ';
 import Write from 'components/one/Write';
+// import Write from 'components/one/WriteRQ';
 import * as s from 'styles/one/page';
 
 interface Prop {
