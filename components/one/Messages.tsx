@@ -1,5 +1,4 @@
 import { useEffect, useRef } from 'react';
-import axios from 'axios';
 import { alertError } from 'utils/alert';
 import * as s from 'styles/one/Messages';
 import { Message } from 'pages/one/[id]';
@@ -28,8 +27,12 @@ interface PropAnotherMessage {
 function MyMessage({ docid, messageid, content, messages }: PropMyMessage) {
   const click$delete = async () => {
     const newMessages = messages.filter((message) => message.id !== messageid);
-    const { status } = await axios.put(`/api/one-message?id=${docid}`, {
-      messages: newMessages,
+    const { status } = await fetch(`/api/one-message?id=${docid}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ messages: newMessages }),
     });
     if (status !== 201) {
       alertError('죄송합니다. 문제가 발생했습니다.');

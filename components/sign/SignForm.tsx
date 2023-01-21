@@ -28,8 +28,8 @@ export default function SignForm() {
       await signInWithEmailAndPassword(auth, emailInput, passwordInput);
       router.push('/');
     } catch (error) {
+      console.error(error);
       if (error instanceof Error) {
-        console.error(error.message);
         if (error.message.includes('user-not-found')) {
           alertError('해당 계정이 존재하지 않습니다!');
         }

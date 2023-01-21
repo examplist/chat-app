@@ -1,5 +1,4 @@
 import { useRouter } from 'next/router';
-import axios from 'axios';
 import { FiArrowLeft } from 'react-icons/fi';
 import { alertError } from 'utils/alert';
 import * as s from 'styles/one/Title';
@@ -22,7 +21,9 @@ export default function Title({ myid, another }: Prop) {
     if (!answer) {
       return;
     }
-    const { status } = await axios.delete(`/api/one-room?me=${myid}&an=${another.id}`);
+    const { status } = await fetch(`/api/one-room?me=${myid}&an=${another.id}`, {
+      method: 'DELETE',
+    });
     if (status !== 204) {
       alertError('죄송합니다. 문제가 생겼습니다.');
       return;

@@ -1,7 +1,6 @@
 import { useManyStore } from 'store/many';
 import { useAuthStore } from 'store/auth';
 import { FormEvent, useRef, useState } from 'react';
-import axios from 'axios';
 import { v4 as uuidv4 } from 'uuid';
 import { alertError } from 'utils/alert';
 import * as s from 'styles/many/Write';
@@ -28,8 +27,12 @@ export default function Write() {
     setLoading(true);
     const content = refContent.current.value;
     messages.push({ id: uuidv4(), author: myid, content });
-    const { status } = await axios.put(`/api/many-message?id=${roomid}`, {
-      messages,
+    const { status } = await fetch(`/api/many-message?id=${roomid}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ messages }),
     });
     if (status !== 201) {
       alertError('죄송합니다. 문제가 발생했습니다.');

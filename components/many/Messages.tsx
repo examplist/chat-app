@@ -1,7 +1,6 @@
 import { useAuthStore } from 'store/auth';
 import { useManyStore } from 'store/many';
 import { useEffect, useRef } from 'react';
-import axios from 'axios';
 import { alertError } from 'utils/alert';
 import * as s from 'styles/many/Messages';
 import { Message } from 'store/many';
@@ -20,8 +19,12 @@ interface PropAnotherMessage {
 function MyMessage({ roomid, messageid, content, messages }: PropMyMessage) {
   const click$delete = async () => {
     const newMessages = messages.filter((message) => message.id !== messageid);
-    const { status } = await axios.put(`/api/many-message?id=${roomid}`, {
-      messages: newMessages,
+    const { status } = await fetch(`/api/many-message?id=${roomid}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ messages: newMessages }),
     });
     if (status !== 201) {
       alertError('죄송합니다. 문제가 발생했습니다.');
