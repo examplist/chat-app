@@ -1,6 +1,18 @@
-## 커밋이 별로 없는 것에 대해서
+\* 한국어 설명은 아래에 있습니다.
 
-해당 프로젝트는 회사 입사 시험용 과제를 약간 변형한 것입니다. 기존의 것에는 회사 이름이 있어서 그것을 빼고 새로 만들었습니다.
+## Introduction
+
+It is a chat application.
+
+Below are the key features.
+
+- one-on-one chat
+
+- group chat
+
+## Demonstration Videos
+
+[link](https://www.youtube.com/playlist?list=PLvBzZzUGEXRUp-0xlTstaRJt76p8mLz7T)
 
 ## 소개
 
@@ -11,10 +23,6 @@
 - 일대일 채팅
 
 - 그룹 채팅
-
-## 배포
-
-[링크](https://zingy-lokum-f38f19.netlify.app/)
 
 ## 시연 영상
 
